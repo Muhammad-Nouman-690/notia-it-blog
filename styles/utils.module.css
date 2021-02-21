@@ -24,12 +24,11 @@
 }
 
 .newsBox {
-  border: 1px solid #d4d4d4;
-  overflow: hidden;
+  border: 1px solid #d4d4d4; 
   padding: 15px 7px;
   margin: 0 0 20px 0;
 }
-
+ 
 .separator {
   border-top: 1px solid #d4d4d4;
   margin-top: 10px;
@@ -75,3 +74,10 @@
   font-weight: 700;
 }
 
+.label {
+  float: right;
+  padding: .2em .6em;
+  border-radius: .5em;
+  display: flex;
+  flex-direction: column;
+}
