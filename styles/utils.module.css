@@ -1,0 +1,77 @@
+.searchIcon {
+  color: #fff;
+}
+
+.formControl {
+  color: #fff;
+}
+
+.mainHeading {
+  color: #93191b;
+  font-weight: 600;
+}
+
+.mainPara {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #575756;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.paraBold {
+  font-weight: 700;
+}
+
+.newsBox {
+  border: 1px solid #d4d4d4;
+  overflow: hidden;
+  padding: 15px 7px;
+  margin: 0 0 20px 0;
+}
+
+.separator {
+  border-top: 1px solid #d4d4d4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.newsTable {
+  display: table;
+  width: 100%;
+}
+
+.newsImg {
+  width: 150px;
+  float: left;
+  padding-top: 3px;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.newsTitle {
+  color: #93191b;
+  font-weight: 700;
+  padding-left: 15px;
+}
+
+.newsDate {
+  color: #575756;
+  padding-left: 15px;
+}
+
+.newsPara {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #575756;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 165px;
+}
+
+.newsArticle {
+  color: #797978;
+  font-weight: 700;
+}
+
