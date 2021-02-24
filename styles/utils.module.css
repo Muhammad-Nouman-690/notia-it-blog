@@ -7,3 +7,26 @@
     color: #fff;
 } 
 
+.headText {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #575756;
+    font-size: 14px;
+}
+
+.headLink {
+    text-align: right;
+}
+
+.footerMain {
+    padding: 25px;
+    background-color: #575756;
+    color: #818180;
+    font-size: 14px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footerMain a {
+    text-decoration: none;
+    color: #818180;
+}
