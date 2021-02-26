@@ -17,6 +17,49 @@
     text-align: right;
 }
 
+.mainSec {
+    border: 1px solid #d4d4d4;
+    padding: 15px 7px;
+    margin: 0 0 20px 0;
+    line-height: 180%;
+    overflow: hidden;
+}
+
+.secHeading {
+    color: #93191b;
+    font-weight: 700;
+    font-size: 19px;
+    font-family: inherit;
+}
+
+.mainSec a {
+    color: #797978;
+    font-weight: 700;
+}
+
+.mainSec span {
+    color: #575756;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.secNum {
+    background-color: #ebebeb;
+    float: right;
+    padding: .2em .6em;
+    border-radius: .5em;
+    line-height: 1;
+}
+
+.secBorder {
+    border-right: 1px solid #d4d4d4;
+    padding-right: 15px;
+}
+
+.secBorderOne {
+    padding-right: 15px;
+}
+
 .footerMain {
     padding: 25px;
     background-color: #575756;
