@@ -1,7 +1,8 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyDAOsl2_7oKRjnoP0SjVg0x-MX3tepr1CU",
     authDomain: "notiablog.firebaseapp.com",
     projectId: "notiablog",
@@ -11,8 +12,13 @@ const firebaseConfig = {
     measurementId: "G-M4ELYSRMDH"
   };
 
+  try {
+    firebase.initializeApp(firebaseConfig);
+  } catch(err){
+    if (!/already exists/.test(err.message)) {
+      console.error('Firebase initialization error', err.stack)}
+  }
+  
    // Initialize Firebase
-   firebase.initializeApp(firebaseConfig);
-   
-  const fire = firebase;
-export default fire;
+   const fire = firebase;
+   export default fire;

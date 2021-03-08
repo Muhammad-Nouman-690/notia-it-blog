@@ -1,4 +1,4 @@
-import CreatePost from '../component/CreatePost'
+//import CreatePost from '../component/CreatePost'
 import Head from 'next/head'
 import Navbar from '../component/Navbar'
 import Heading from '../component/Heading'
@@ -19,7 +19,7 @@ export default function Home() {
 
   <Section />
 
-  <CreatePost />
+  {/* <CreatePost /> */}
 
   <News />
 
