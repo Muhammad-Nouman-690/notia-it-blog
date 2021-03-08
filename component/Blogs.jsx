@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import fire from "../config/fire-conf"
 import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
+import Link from "next/link"
 // import { getBlog } from "../Server/Server";
 
 export default function Blogs() {
@@ -32,9 +33,11 @@ export default function Blogs() {
                 width="160px"
               />              
             </div>
-            <a href="" className={utilStyles.newsTitle}>
+            <Link href="/blog/[id]" as={'/blog/' + item.id}>
+            <a  className={utilStyles.newsTitle}>
               {item.title}
             </a>
+            </Link>
             <br />
             <i className={utilStyles.newsDate}>{item.date}</i>
             <br />
