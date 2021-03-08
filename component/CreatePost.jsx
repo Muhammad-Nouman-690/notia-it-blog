@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HomeModule from "../styles/Home.module.css";
+import fire from "../config/fire-conf"
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -7,6 +8,13 @@ const CreatePost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
+    fire.firestore()
+  .collection('Blog')
+  .add({
+    title: title,
+    content: content,
+  });
     console.log({
       "title=>": title,
       "content=>": content,

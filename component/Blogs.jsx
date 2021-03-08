@@ -1,14 +1,28 @@
+import { useState, useEffect } from "react";
+import fire from "../config/fire-conf"
 import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
-import { getBlog } from "../Server/Server";
+// import { getBlog } from "../Server/Server";
 
 export default function Blogs() {
 
-  const blog = getBlog();
-
+  // const blog = getBlog();
+  const [blogs, setBlogs] = useState([]);
+  useEffect(() => {
+    fire.firestore()
+      .collection('Blog')
+      .onSnapshot(snap => {
+        const blogs = snap.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setBlogs(blogs);
+      });
+  }, []);
+  console.log("Backend Data==>",blogs)
     return (
       <>
-        {blog.map((item) => (
+        {blogs.map((item) => (
           <div key={item.id} className={utilStyles.newsTable}>
             <div className={utilStyles.newsImg}>
               <Image
@@ -18,14 +32,14 @@ export default function Blogs() {
               />
             </div>
             <a href="" className={utilStyles.newsTitle}>
-              {item.newsTitle}
+              {item.title}
             </a>
             <br />
             <i className={utilStyles.newsDate}>{item.newsDate}</i>
             <br />
             <br />
             <div className={utilStyles.newsPara}>
-              <p>{item.newsPara}</p>
+              <p>{item.content}</p>
             </div>
             <p style={{ textAlign: "right" }}>
               <a href="" className={utilStyles.newsArticle}>
