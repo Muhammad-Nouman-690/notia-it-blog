@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 const Blog = (props) => {
 
-    const [blog, setBlog] = useState(null);
-
+  const [blog, setBlog] = useState(null);
+ 
   useEffect(() => {
     fire.firestore()
       .collection('Blog')
@@ -26,6 +26,7 @@ const Blog = (props) => {
       <p>
         {blog.content}
       </p>
+      
       <Link href="/">
         <a>Back</a>
       </Link>

@@ -6,8 +6,15 @@ import Section from '../component/Section'
 import News from '../component/News'
 import Cities from '../component/Cities'
 import Footer from '../component/Footer'
+import dynamic from 'next/dynamic'
 
 export default function Home() {
+  
+  const Map = dynamic(() => import("../component/Map"), {
+    loading: () => "Loading...",
+    ssr: false
+  });
+
   return (
     <>
     <Head>
@@ -22,7 +29,7 @@ export default function Home() {
   {/* <CreatePost /> */}
 
   <News />
-
+    <Map />
   <Cities />
 
   <Footer />

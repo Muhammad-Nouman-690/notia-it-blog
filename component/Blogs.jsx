@@ -40,8 +40,7 @@ export default function Blogs() {
             </Link>
             <br />
             <i className={utilStyles.newsDate}>{item.date}</i>
-            <br />
-            <br />
+            
             <div className={utilStyles.newsPara}>
               <p>{item.content}</p>
             </div>
