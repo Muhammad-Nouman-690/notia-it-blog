@@ -7,12 +7,14 @@ import News from '../component/News'
 import Cities from '../component/Cities'
 import Footer from '../component/Footer'
 import dynamic from 'next/dynamic'
+import HomeCss from '../styles/Home.module.css'
 
 export default function Home() {
   
   const Map = dynamic(() => import("../component/Map"), {
     loading: () => "Loading...",
-    ssr: false
+    ssr: false,
+    productionBrowserSourceMaps: true
   });
 
   return (
@@ -29,7 +31,9 @@ export default function Home() {
   {/* <CreatePost /> */}
 
   <News />
+  <div className={HomeCss.container}>
     <Map />
+  </div>
   <Cities />
 
   <Footer />

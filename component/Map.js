@@ -1,25 +1,28 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
-import "leaflet-defaulticon-compatibility";
+import { Component } from 'react';
+import ReactMapGL from 'react-map-gl';
 
-const Map = () => {
-  return (
-    <MapContainer
-      center={[40.8054, -74.0241]}
-      zoom={14}
-      scrollWheelZoom={false}
-      style={{ height: "100%", width: "100%" }}
-    >
-      <TileLayer
-        url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.MAPBOX_API_key}`}
-        attribution='Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
+class Map extends Component {
+  state = {
+    viewport: {
+      width: '60vw',
+      height: '60vh',
+      latitude: 41.5868,
+      longitude: -93.625,
+      zoom: 13
+      
+    }
+  };
+
+  render() {
+    return (
+      <ReactMapGL
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+        mapboxApiAccessToken="pk.eyJ1Ijoibm9taTY5MCIsImEiOiJja20zYnpjcDEwaG9wMnJucmQ2MnlnYno0In0.OqicEU_5ZmK5QOx5c36OJg"
+        onViewportChange={(viewport) => this.setState({ viewport })}
+        {...this.state.viewport}
       />
-      <Marker position={[40.8054, -74.0241]} draggable={true} animate={true}>
-        <Popup>Hey ! I live here</Popup>
-      </Marker>
-    </MapContainer>
-  );
-};
+    );
+  }
+}
 
 export default Map;
