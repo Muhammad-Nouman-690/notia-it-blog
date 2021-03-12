@@ -1,4 +1,5 @@
 //import CreatePost from '../component/CreatePost'
+import { useEffect, useState } from 'react';
 import Head from 'next/head'
 import Navbar from '../component/Navbar'
 import Heading from '../component/Heading'
@@ -13,10 +14,20 @@ export default function Home() {
   
   const Map = dynamic(() => import("../component/Map"), {
     loading: () => "Loading...",
-    ssr: false,
-    productionBrowserSourceMaps: true
+    ssr: false
   });
 
+  const [locations, setLocations] = useState([]);
+  useEffect(() => {
+    const fetchLocations = async () => {
+      await fetch('').then((response) =>
+        response.text()).then((res) => JSON.parse(res))
+      .then((json) => {
+        setLocations(json.features);
+      }).catch((err) => console.log({ err }));
+    };
+    fetchLocations();
+  }, []);
   return (
     <>
     <Head>
@@ -32,7 +43,7 @@ export default function Home() {
 
   <News />
   <div className={HomeCss.container}>
-    <Map />
+    <Map locations={locations} />
   </div>
   <Cities />
 
